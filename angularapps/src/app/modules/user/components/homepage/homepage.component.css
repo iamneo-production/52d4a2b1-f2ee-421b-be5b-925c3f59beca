@@ -1,0 +1,9 @@
+.home-wrapper {
+    width: 30rem;
+ }
+ input {
+    margin-bottom: 2rem;
+ }
+ .checked {
+    color: orange;
+  }
