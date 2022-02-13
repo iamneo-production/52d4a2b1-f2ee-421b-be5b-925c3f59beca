@@ -1,0 +1,97 @@
+<div class="container pt-5 pb-5">
+    <div class="col-12">
+        <div class="d-flex flex-wrap justify-content-center">
+            <div class="card-text">
+                <div class="card-body">
+                    <form  [formGroup]="searchForm" (submit)="submit()"> <br> <br>
+                        <div class="row home-wrapper">
+                            <div class="col-md-8">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" id="searchkeyword" formControlName="searchkeyword" placeholder="Type your search">
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <input type="submit" class="btn btn-primary w-100"  id="searchEventbutton" value="Search" name="search">
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="row"  *ngIf="showMsg">
+                    <div class="col-xs-12">
+                     <p class="text-center">Searching For . {{name}} 
+                      </p>
+                    </div>
+                  </div>
+            </div>
+            
+            <div class="container mx-auto mt-4">
+              <div class="row">
+                  <div class="col-md-4">
+                      <div class="card" style="width: 20rem;">
+                          <img src="https://floweraura-blog-img.s3.ap-south-1.amazonaws.com/Must+Have+Room+Decorations+for+Birthday+Party/Post-4.jpg" height="180px" class="card-img-top" alt="...">
+                          <div class="card-body">
+                                <h5 class="card-title text-center">SS Birthday Events</h5>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="btn-group">
+                                        <p class="card-subtitle mb-2 text-muted">Place : Chennai</p>
+                                    </div>
+                                    <div class="btn-group">
+                                        <span class="fa fa-star checked"></span>
+                                        <span class="fa fa-star checked"></span>
+                                        <span class="fa fa-star checked"></span>
+                                        <span class="fa fa-star checked"></span>
+                                        <span class="fa fa-star checked"></span>
+                                    </div>
+                                </div>
+                          </div>
+                      </div>
+                  </div>
+                  
+                  <div class="col-md-4">
+                      <div class="card" style="width: 20rem;">
+                          <img src="https://makemyevent.in/wp-content/uploads/2018/10/Birthday-planner3-527x350xc.jpg" height="180px" class="card-img-top" alt="...">
+                          <div class="card-body">
+                              <h5 class="card-title text-center">KK Birthday Events</h5>
+                              <div class="d-flex justify-content-between align-items-center">
+                                    <div class="btn-group">
+                                        <p class="card-subtitle mb-2 text-muted">Place : Bengaluru</p>
+                                    </div>
+                                    <div class="btn-group">
+                                        <span class="fa fa-star checked"></span>
+                                        <span class="fa fa-star checked"></span>
+                                        <span class="fa fa-star checked"></span>
+                                        <span class="fa fa-star checked"></span>
+                                        <span class="fa fa-star text-muted"></span>
+                                    </div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+
+                  <div class="col-md-4">
+                      <div class="card" style="width: 20rem;">
+                          <img src="https://www.prismindiaevents.com/wp-content/uploads/2019/10/birthday-thme-in-dhaka.jpg" height="180px" class="card-img-top" alt="...">
+                          <div class="card-body">
+                                <h5 class="card-title text-center">MM Birthday Events</h5>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="btn-group">
+                                        <p class="card-subtitle mb-2 text-muted">Place : Hyderabad</p>
+                                    </div>
+                                    <div class="btn-group">
+                                        <span class="fa fa-star checked"></span>
+                                        <span class="fa fa-star checked"></span>
+                                        <span class="fa fa-star checked"></span>
+                                        <span class="fa fa-star checked"></span>
+                                        <span class="fa fa-star text-muted"></span>
+                                    </div>
+                                </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
