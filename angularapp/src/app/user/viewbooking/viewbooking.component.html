@@ -1,0 +1,62 @@
+<div class="Container">
+    <div class="row">
+        <div class="col-lg-8 my-5" [ngStyle]="{margin:'auto'}">
+            <table class="table">
+                <thead class="thead-light"
+                    [ngStyle]="{borderBottom:'1px solid',padding:'10px',borderTopLeftRadius:'10px',borderTopRightRadius:'10px'}">
+                    <tr>
+                        <th scope="col">id</th>
+                        <th scope="col">EventName</th>
+                        <th scope="col">Time</th>
+                        <th scope="col">date</th>
+                        <th scope="col">price</th>
+                        <th scope="col"></th>
+                        <th scope="col"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let item of BookedEventDetails; let i = index">
+                        <th scope="row">{{i+1}}</th>
+                        <td>{{item.eventName}}</td>
+                        <td>{{item.eventTime}}</td>
+                        <td>{{item.eventDate}}</td>
+                        <td>12000</td>
+                        <td><img type="button" (click)="openPopup(item)" src="../../assets/edit.png"></td>
+                        <td><img type="button" (click)="DeleteEvent(item)" src="../../assets/delete.png"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<div class="modal" tabindex="-1" role="dialog" [ngStyle]="{display:displayStyle}">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content" *ngIf="PopupDetails">
+            <div class="modal-header">
+                <h6>{{PopupDetails.eventName}}</h6>
+            </div>
+            <div class="modal-body">
+                <form [ngStyle]="{margin:'auto'}" class="row marketing pl-5 pr-5" (ngSubmit)="EditEvent()"
+                    #form="ngForm">
+                    <div>
+                        <input name="eventName" class="form-control" required [ngModel]="PopupDetails.eventName"
+                            placeholder="Enter the Event Name" type="text">
+                        <input name="time" placeholder="Select the time" class="form-control" required
+                            [ngModel]="PopupDetails.eventTime" type="time">
+                        <input name="date" placeholder="Enter the date" class="form-control"
+                            required [ngModel]="PopupDetails.eventDate" type="date">
+                        <!-- <input name="price" placeholder="Enter the price" class="form-control"
+                            required [ngModel]="PopupDetails.price" type="text"> -->
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-danger" type="submit" [disabled]="!form.valid" (click)="closePopup();">Submit</button>
+                        <button type="button" class="btn btn-danger" (click)="closePopup()">
+                            Close
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

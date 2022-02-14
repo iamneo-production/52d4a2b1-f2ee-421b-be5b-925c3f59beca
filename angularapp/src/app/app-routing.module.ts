@@ -1,23 +1,35 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { ForgetPasswordComponent } from './components/forget-password/forget-password.component';
-import { LoginComponent } from './components/login/login.component';
-import { NotFoundComponent } from './components/not-found/not-found.component';
-import { SignupComponent } from './components/signup/signup.component';
-import { AuthGuard } from './guards/auth.guard';
+import { BookingComponent } from './user/booking/booking.component';
+import { HomepageComponent } from './user/homepage/homepage.component';
+import { LoginComponent } from './auth/login/login.component';
+import { SignupComponent } from './auth/signup/signup.component';
+import { UserComponent } from './user/user.component';
+import { ViewbookingComponent } from './user/viewbooking/viewbooking.component';
+
 const routes: Routes = [
-  { path : 'user/login',component: LoginComponent },
-  { path : 'user/signup',component: SignupComponent },
-  { path : 'user/forget-password',component: ForgetPasswordComponent },
-  { path : '',redirectTo : 'user/login',pathMatch :'full' },
+  { path: '', redirectTo: 'user/getAllThemes', pathMatch: 'full' },
+  { path: 'user/login', component: LoginComponent },
+  { path: 'user/signup', component: SignupComponent },
   {
-    path: 'user',
-    canActivate :[AuthGuard],
-    loadChildren: () =>
-      import('./modules/user/user.module').then((m) => m.UserModule),
+    path: 'user', component: UserComponent, children: [
+      { path: '', redirectTo: 'getAllThemes', pathMatch: 'full' },
+      { path: 'getAllThemes', component: HomepageComponent },
+      { path: 'bookTheme', component: BookingComponent },
+      { path: 'getBookedTheme', component: ViewbookingComponent },
+    ]
   },
-  { path : '**',component: NotFoundComponent}
+  {
+    path: 'admin', component: UserComponent, children: [
+      { path: '', redirectTo: 'getAllThemes', pathMatch: 'full'},
+      { path: 'getAllThemes', component: HomepageComponent },
+      { path: 'bookTheme', component: BookingComponent },
+      { path: 'getBookedTheme', component: ViewbookingComponent },
+    ]
+  },
+  { path: '**', redirectTo: 'user/getAllThemes' },
 ];
+
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]

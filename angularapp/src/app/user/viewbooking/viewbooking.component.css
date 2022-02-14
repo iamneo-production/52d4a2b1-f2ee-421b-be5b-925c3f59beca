@@ -1,0 +1,9 @@
+thead{
+    border-top: 15px;
+}
+input{
+    margin: 10px;
+}
+Input.ng-touched.ng-invalid{
+    border: 2px solid red;
+}

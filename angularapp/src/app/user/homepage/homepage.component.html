@@ -1,0 +1,74 @@
+<div class="container mx-auto align-items-center my-5">
+    <div class="col-6 mx-auto input-group">
+        <input type="search" id="form1" class="form-control" />
+        <button type="button" class="btn btn-primary  px-4">
+            Search
+        </button>
+    </div>
+</div>
+<div class="modal" tabindex="-1" role="dialog" [ngStyle]="{display:displayStyle}">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content" *ngIf="PopupDetails">
+            <div class="modal-header">
+                <h6>{{PopupDetails.title}}</h6>
+            </div>
+            <div class="modal-body">
+                <div>
+                    <h6 style="display: inline-block;">AlbumID : </h6>
+                    <p style="display: inline-block;">{{PopupDetails.albumId}}</p>
+                </div>
+                <div>
+                    <h6 style="display: inline-block;">ID : </h6>
+                    <p style="display: inline-block;">{{PopupDetails.id}}</p>
+                </div>
+                <div>
+                    <h6 style="display: inline-block;">Title : </h6>
+                    <p style="display: inline-block;">{{PopupDetails.title}}</p>
+                </div>
+                <img [src]="PopupDetails.thumbnailUrl">
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" (click)="closePopup()">
+                    Close
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row align-items-center h-100">
+        <div class="col-xs mx-auto" *ngFor="let card of Theme">
+            <div *ngIf="card.id<=100">
+                <div class="card border-danger fullcard" type="button" (click)="openPopup(card)" style="width: 17rem;">
+                    <img class="card-img-top image" [src]="card.image" [alt]="card.title">
+                    <div class="card-body">
+                        <h5 class="card-text" style="text-align: center">{{card.title}}</h5>
+                        <p class="card-text headText" style="display: inline-block;">{{card.description}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- <div class="modal" id="myModal">
+        <div class="modal-dialog">
+          <div class="modal-content">
+          
+            <div class="modal-header">
+              <h4 class="modal-title">Modal Heading</h4>
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            
+            <div class="modal-body">
+              Modal body..
+            </div>
+            
+            <div class="modal-footer">
+              <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+            </div>
+            
+          </div>
+        </div>
+      </div> -->
+</div>

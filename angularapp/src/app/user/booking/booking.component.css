@@ -1,0 +1,14 @@
+Input.ng-touched.ng-invalid{
+    border: 1px solid red;
+}
+input,select{
+    margin-bottom: 25px;
+}
+.row{
+    justify-content: space-around;
+}
+.checkBox{
+    border: 2px solid red;
+    min-width: 200px;
+    margin-bottom: 20px;
+}

@@ -1,0 +1,76 @@
+<div class="container bg-light" *ngIf="currentPage">
+    <form [ngStyle]="{margin:'auto'}" class="row marketing pt-5 pl-5 pr-5 mt-5" (ngSubmit)="onSubmit()" #form="ngForm">
+        <div class="col-lg-6">
+            <input name="eventName" class="form-control" required ngModel placeholder="Event Name" type="text">
+            <input name="applicantName" placeholder="Enter applicant name" class="form-control" required ngModel
+                type="text">
+            <input name="applicantAddress" placeholder="Enter applicant address" class="form-control" required ngModel
+                type="text">
+            <input name="applicantMobileNo" placeholder="Enter applicant mobile no" class="form-control" required
+                ngModel type="text" minlength="10" maxlength="10">
+            <input name="applicantEmailId" placeholder="Enter applicant email ID" class="form-control" required ngModel
+                type="email" email>
+        </div>
+
+        <div class="col-lg-6">
+            <input name="eventAddress" class="form-control" required ngModel placeholder="Address : Coimbatore"
+                type="text">
+            <input name="eventDate" placeholder="Enter date of the event" class="form-control" required ngModel
+                type="date">
+            <input name="eventTime" placeholder="Enter time of the event" class="form-control" required ngModel
+                type="time">
+            <input name="noOfPeople" placeholder="Enter the number of people" class="form-control" required ngModel
+                type="number">
+        </div>
+        <div class="col-lg-4 mr-5 mb-3" [ngStyle]="{margin:'auto'}">
+            <div class="btn-group">
+                <button class="btn btn-dark">1</button>
+                <button class="btn btn-secondary" (click)="ChangeToNextPage()">2</button>
+            </div>
+        </div>
+        <div class="col-lg-2 mx-2 mb-3">
+            <div class="btn-group">
+                <button class="btn btn-danger" type="submit" [disabled]="!form.valid">Next Page</button>
+            </div>
+        </div>
+    </form>
+</div>
+
+
+<div class="container bg-light" *ngIf="nextPage">
+    <form [ngStyle]="{margin:'auto'}" class="row marketing pt-5 pl-5 pr-5 mt-5" (ngSubmit)="uploadDetails()"
+        #subform="ngForm">
+        <div class="col-lg-6">
+            <select name="selectFoodCategory" placeholder="Select the category" class="form-control" required ngModel
+                placeholder="Event Name">
+                <option value="" disabled selected hidden>Select the category</option>
+                <option>Vegeterian</option>
+                <option>Non-Vegeterian</option>
+            </select>
+            <input name="quantityOfVeg" placeholder="Enter the quantity of Veg items" class="form-control" required
+                ngModel type="number">
+            <input name="quantityOfNonVeg" placeholder="Enter the quantity of Non Veg items" class="form-control"
+                required ngModel type="number">
+        </div>
+
+        <div class="col-lg-6 checkBox">
+            <div>Add-Ons</div>
+            <div class="row container" *ngFor="let checkBox of checkBoxes" #CheckBox>
+                <label>{{checkBox.name}}</label>
+                <label>{{checkBox.price}}</label>
+                <input type="checkbox" [checked]="checkBox.check" ngModel>
+            </div>
+        </div>
+        <div class="col-lg-4 mr-5 mb-3" [ngStyle]="{margin:'auto'}">
+            <div class="btn-group pageBtn">
+                <button class="btn btn-secondary" (click)="ChangeToCurrentPage()">1</button>
+                <button class="btn btn-dark">2</button>
+            </div>
+        </div>
+        <div class="col-lg-2 mx-2 mb-3">
+            <div class="btn-group">
+                <button class="btn btn-danger" type="submit" [disabled]="!subform.valid">Submit</button>
+            </div>
+        </div>
+    </form>
+</div>

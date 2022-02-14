@@ -1,0 +1,19 @@
+<nav class="navbar navbar-expand-lg navbar-light " [ngStyle]="{backgroundColor:'orange',color:'white'}">
+    <div class="collapse navbar-collapse">
+
+        <h4 role="button" class="nav nav-brand nav-link" routerLink="/user/getAllThemes">Birthday Event</h4>
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-items light">
+                <a class="pl-5 nav-link para" type="button" [ngStyle]="{color:'white'}" routerLink="bookTheme" routerLinkActive="active">View Theme
+                </a>
+            </li>
+            <li class="nav-items light">
+                <a class="nav-link" type="button" [ngStyle]="{color:'white'}" routerLink="getBookedTheme" routerLinkActive="active">Food Menu</a>
+            </li>
+            <li class="nav-items light">
+                <a class="nav-link" type="button" [ngStyle]="{color:'white'}" routerLink="getBookedTheme" routerLinkActive="active">Add add-on</a>
+            </li>
+        </ul>
+        <a class="nav-link" routerLink="/user/login" type="button">Logout</a>
+    </div>
+</nav>
