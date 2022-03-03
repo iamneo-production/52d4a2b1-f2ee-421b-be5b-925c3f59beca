@@ -1,1 +1,77 @@
-<p>signup works!</p>
+<!--SigUp Form-->
+<div class="container justify-content-center p-4 mt-5" style="background:blue; height: 600px; width: 450px;border-radius: 25px;">
+    <div class="">
+        <h1 style="text-align: center;" class="text-white"> Sign-up</h1>
+        <form [formGroup]="userform" #userRegisterForm="ngForm" (ngSubmit)="register()" autocomplete="off">
+
+            <!--<div class="form-group  mt-2 mb-3">
+
+                <small *ngIf="userform.get('UserRole')?.untouched || userform.get('UserRole')?.touched" class="text-white">Select UserRole</small>
+                <select formControlName="UserRole" class="form-control form-select bg-transparent text-white">
+                <option value="User" id="user" style="color: black;" selected>User</option>
+                <option value="Admin" id="admin" style="color: black;">Admin</option>
+              </select>
+                <small *ngIf="userform.get('UserRole')?.invalid && userform.get('UserRole')?.touched" class="text-warning">Please! Select UserRole</small>
+
+            </div> -->
+
+            <div class="form-group mt-3 ">
+
+                <input id="email" name="email" [(ngModel)]="model.email" formControlName="email" class="form-control bg-transparent text-white " type="email " placeholder="Enter Email " required>
+                <small *ngIf="userform.get('email')?.invalid && userform.get('email')?.touched" class="text-warning"> Invalid Email</small>
+
+            </div>
+
+            <div class="form-group mt-3 ">
+
+
+                <input id="username" name="username" [(ngModel)]="model.username" formControlName="username" class="form-control bg-transparent text-white " type="text " placeholder="Enter User Name " required>
+                <small *ngIf="userform.get('username')?.invalid && userform.get('username')?.touched" class="text-warning">Enter UserName</small>
+
+            </div>
+
+            <div class="form-group mt-3 ">
+
+                <input id="mobileNumber" name="mobilenumber" [(ngModel)]="model.mobilenumber" formControlName="mobilenumber" class="form-control bg-transparent text-white " type="number " placeholder="Enter Mobile Number " required>
+                <small *ngIf="userform.get('mobilenumber')?.invalid && userform.get('mobilenumber')?.touched" class="text-warning">Invalid Number! Enter correct Phone number</small>
+
+            </div>
+
+            <div class="form-group mt-3 ">
+
+                <input id="password" name="password" [(ngModel)]="model.password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#\$%\^&\*]).{8,}" formControlName="password" class="form-control bg-transparent text-white " type="password" placeholder="Password " required
+                    data-toggle="Password">
+
+                <small *ngIf="userform.get('password')?.invalid && userform.get('password')?.touched" class="text-warning"> Invalid password! Enter correct password </small>
+                <div class="input-group-append">
+                    <div class="input-group-text"><i class="fa fa-eye"></i></div>
+                </div>
+            </div>
+
+            <div class="form-group mt-3 ">
+
+                <input id="confirmPassword" formControlName="confirmpassword" (change)="onCheckPassword()" class="form-control bg-transparent text-white " type="password" placeholder="Confirm Password " required data-toggle="Password">
+
+                <small *ngIf="userform.get('confirmpassword')?.hasError('mismatch')" class="text-warning">Password do not match.</small>
+                <div class="input-group-append">
+                    <div class="input-group-text"><i class="fa fa-eye"></i></div>
+                </div>
+            </div>
+
+            <div class="form-group mt-4 text-center ">
+                <button [disabled]="userform?.invalid" type="submit" class="btn-lg text-white btn-outline-light " style="background: blue; border-radius: 10px; border:1px solid white ">Submit</button>
+            </div>
+
+            <!--<div class="form-group mt-4 text-center ">
+              <span class="text-white ">Already registered ? Login</span><br>
+              <a class="text-white mt-2 mt-3 " routerLink="/login "> Already registered ? Login</a>
+          </div>--->
+
+        </form> <br>
+        <span class="text-white text-center mt-3 ">Already registered?..</span>
+        <a class="text-white text-lg" routerLink="/login">  Login</a>
+
+    </div>
+
+</div>
+
