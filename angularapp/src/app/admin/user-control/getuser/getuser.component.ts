@@ -8,7 +8,6 @@ import { UserControlService } from 'src/app/Services/user-control.service';
 })
 export class GetuserComponent implements OnInit {
 
-  
   UserDetails: any = [];
 
   constructor(private route:Router,private userService:UserControlService) { }
@@ -18,7 +17,6 @@ export class GetuserComponent implements OnInit {
       this. UserDetails = this.userService.GetUser();
     }, 1000);
   }
-
   AddNav() {
     this.route.navigate(['admin/addUser'])
   }
@@ -31,5 +29,4 @@ export class GetuserComponent implements OnInit {
     this.route.navigate(['admin/deleteUser/{' + id + '}']);
     this.userService.singleUserId = id;
   }
-
 }

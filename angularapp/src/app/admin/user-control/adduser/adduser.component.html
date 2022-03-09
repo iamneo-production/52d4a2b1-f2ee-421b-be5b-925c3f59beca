@@ -1,0 +1,26 @@
+<div class="container" [ngStyle]="{marginTop:'50px',color:'darkOrange'}">
+    <h4>Add User</h4>
+</div>
+<div class="container bg-light cont" >
+    <form [ngStyle]="{margin:'auto'}" class="row marketing pl-5 mt-5" (ngSubmit)="onSubmit()" #form="ngForm">
+        <div class="col-lg-6 pt-5">
+            <input name="userName" id="userName" class="form-control" ngModel required
+                placeholder="Enter the Name of the User " type="text">
+            <input name="email" id="email" class="form-control" ngModel required
+                placeholder="Enter User Email Id " type="text">
+            <input name="password" id="password" class="form-control" ngModel required
+                placeholder="Password " type="password">
+            <input name="mobileNumber" id="mobileNumber" class="form-control" ngModel required
+                placeholder="Enter Mobile Number " type="text">
+            <select name="userRole" id="userRole" placeholder="Select the user Role" class="form-control" required ngModel>
+                <option value="" disabled selected hidden>Select the Role</option>
+                <option>user</option>
+                <option>admin</option>
+            </select>
+            <div class="btn-group mb-4">
+                <button class="btn btn-danger" type="submit" [disabled]="!form.valid">Add User</button>
+            </div>
+        </div>
+    </form>
+</div>
+
