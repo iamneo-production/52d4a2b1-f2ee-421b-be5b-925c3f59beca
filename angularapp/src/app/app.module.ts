@@ -8,6 +8,7 @@ import { SignUpComponent } from './auth/signup/signup.component';
 import { AdminComponent } from './admin/admin.component';
 import { GetuserComponent } from './admin/user-control/getuser/getuser.component';
 import { AdduserComponent } from './admin/user-control/adduser/adduser.component';
+import { EdituserComponent } from './admin/edituser/edituser.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { AdduserComponent } from './admin/user-control/adduser/adduser.component
     SignUpComponent,
     AdminComponent,
     GetuserComponent,
-    AdduserComponent
+    AdduserComponent,
+    EdituserComponent
   ],
   imports: [
     BrowserModule,
