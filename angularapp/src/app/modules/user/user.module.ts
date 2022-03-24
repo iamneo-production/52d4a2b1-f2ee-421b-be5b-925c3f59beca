@@ -9,6 +9,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { UserDashboardComponent } from './components/user-dashboard/user-dashboard.component';
+import { CartComponent } from './components/cart/cart.component';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { UserDashboardComponent } from './components/user-dashboard/user-dashboa
     ViewbookingComponent,
     HeaderComponent,
     FooterComponent,
-    UserDashboardComponent
+    UserDashboardComponent,
+    CartComponent
   ],
   imports: [
     CommonModule,
