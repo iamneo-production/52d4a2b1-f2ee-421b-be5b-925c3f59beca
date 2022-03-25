@@ -1,17 +1,29 @@
 <div class="container" [ngStyle]="{marginTop:'50px',color:'darkOrange'}">
     <h4>Add User</h4>
 </div>
-<div class="container bg-light cont" >
-    <form [ngStyle]="{margin:'auto'}" class="row marketing pl-5 mt-5" (ngSubmit)="onSubmit()" #form="ngForm">
+<div class="container bg-light cont">
+    <form [formGroup]="userform" [ngStyle]="{margin:'auto'}" class="row marketing pl-5 mt-5" (ngSubmit)="onSubmit()" #form="ngForm">
         <div class="col-lg-6 pt-5">
-            <input name="userName" id="userName" class="form-control" ngModel required
+            <div class="form-group mt-2">
+            <input name="userName" id="userName" formControlName="username" class="form-control" ngModel required
                 placeholder="Enter the Name of the User " type="text">
-            <input name="email" id="email" class="form-control" ngModel required
+            <small *ngIf="userform.get('username')?.invalid && userform.get('username')?.touched" class="text-warning">Enter UserName</small>
+            </div>
+            <div class="form-group mt-2">
+            <input name="email" id="email" formControlName="email" class="form-control" ngModel required
                 placeholder="Enter User Email Id " type="text">
-            <input name="password" id="password" class="form-control" ngModel required
+            <small *ngIf="userform.get('email')?.invalid && userform.get('email')?.touched" class="text-warning"> Enter the Email in the correct format </small>
+            </div>
+            <div class="form-group mt-2">
+            <input name="password" id="password" formControlName="password"  class="form-control" ngModel required
                 placeholder="Password " type="password">
-            <input name="mobileNumber" id="mobileNumber" class="form-control" ngModel required
+            <small *ngIf="userform.get('password')?.invalid && userform.get('password')?.touched" class="text-warning">Enter password!!!</small>
+            </div>
+            <div class="form-group mt-2">
+            <input name="mobileNumber" id="mobileNumber" formControlName="mobilenumber" class="form-control" ngModel required
                 placeholder="Enter Mobile Number " type="text">
+            <small *ngIf="userform.get('mobilenumber')?.invalid && userform.get('mobilenumber')?.touched" class="text-warning">Enter 10 digit Mobile Number</small>   
+            </div>     
             <select name="userRole" id="userRole" placeholder="Select the user Role" class="form-control" required ngModel>
                 <option value="" disabled selected hidden>Select the Role</option>
                 <option>user</option>
@@ -23,4 +35,3 @@
         </div>
     </form>
 </div>
-

@@ -1,0 +1,57 @@
+<div class="container mx-auto align-items-center mt-5">  
+    <div class="row justify-content-between">
+        <div class="col-4">
+        <button type="button" class="btn btn-danger px-4" (click)="BackPage()">
+                <span>Back</span>
+        </button>
+        </div>
+
+       <!-- <div class="col-4">
+            <h4   [ngStyle]="{color:'darkOrange'}">Applicant Details</h4>
+        </div>-->
+
+        <!--<div class="col-4">
+        <button type="button" class="btn btn-danger px-4 float-right"  [disabled]="!form.valid"  (click)="nextpage()">
+        <span>Continue</span>
+        </button>
+        </div>-->
+    </div>
+</div>
+
+<div class="container bg-light">
+    <form  [ngStyle]="{margin:'auto'}" class="row marketing pt-3 pl-3 pr-3 mt-3" (ngSubmit)="onSubmit()" #form="ngForm">
+        <div class="col-lg-6">
+          <!--<select name="eventName" class="form-control" required [ngModel]="themeBooking.themeName" placeholder="Event Name">
+                <option value="" disabled selected hidden>Select the Theme</option>
+                <option *ngFor="let theme of ThemeDetails">{{theme.themeName}}</option>
+            </select>-->
+            <input name="eventName" class="form-control" required [ngModel]="themeBooking.themeName"  type="text" disabled>
+            <input name="applicantName" placeholder="Enter applicant name" class="form-control" required ngModel
+                type="text">
+            <input name="applicantAddress" placeholder="Enter applicant address" class="form-control" required ngModel
+                type="text">
+            <input name="applicantMobile" placeholder="Enter applicant mobile no" class="form-control" required ngModel
+                 type="text" minlength="10" maxlength="10">
+            <input name="applicantEmail"  placeholder="Enter applicant email ID" class="form-control" required  ngModel
+                type="email" email>
+        </div>
+
+        <div class="col-lg-6">
+            <input name="eventAddress" class="form-control" required [ngModel]="themeBooking.themeAddress"
+                type="text" disabled>
+            <input name="eventDate" placeholder="Enter date of the event" class="form-control" required ngModel
+                type="date"  min="{{minDate}}">
+            <input name="eventTime" placeholder="Enter time of the event" class="form-control" required ngModel
+                type="time">
+            <input name="noOfPeople" placeholder="Enter the number of people [above 30]" class="form-control" required ngModel
+                type="number" min="30">
+        </div>
+        <div class="col-lg-2 mx-2 mb-3">
+            <div class="btn-group">
+                <button class="btn btn-danger" type="button" [disabled]="!form.valid" (click)="nextpage()">Next Page</button>
+            </div>
+        </div>
+    </form>
+</div>
+
+

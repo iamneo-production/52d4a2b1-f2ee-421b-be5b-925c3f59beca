@@ -17,6 +17,7 @@ export class GetuserComponent implements OnInit {
       this. UserDetails = this.userService.GetUser();
     }, 1000);
   }
+
   AddNav() {
     this.route.navigate(['admin/addUser'])
   }

@@ -1,0 +1,23 @@
+<div class="container" [ngStyle]="{marginTop:'50px',color:'darkOrange'}">
+    <h4>Add AddOn</h4>
+</div>
+<div class="container bg-light cont" >
+    <form [ngStyle]="{margin:'auto'}" class="row marketing pl-5 mt-5" (ngSubmit)="onSubmit()" #form="ngForm">
+        <div class="col-lg-6 pt-5">
+            <input name="addOnName" id="addOnName" class="form-control" ngModel required
+                placeholder="Enter add-on name" type="text">
+            <input name="addOnDescription" id="addOnDescription" placeholder="Enter add-on Description"
+                class="form-control" required ngModel type="text">
+            <input name="addOnPrice" id="addOnPrice" placeholder="Enter add-on price"
+                class="form-control" required ngModel type="text">
+            <input name="addOnImageURL" id="addOnImageURL" class="form-control" ngModel required
+                    placeholder="Enter add-on image URL" type="text">
+            <div class="btn-group mb-4">
+                <button class="btn btn-danger" type="submit" [disabled]="!form.valid">Add AddOn</button>
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <img src="https://www.eventsexpress.in/Activities/AnimalMagicShow21.jpg">
+        </div>
+    </form>
+</div>

@@ -1,8 +1,7 @@
-import { Component, OnInit,ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { UserControlService } from 'src/app/Services/user-control.service';
 import { FormGroup,FormControl,Validators } from '@angular/forms';
-
 @Component({
   selector: 'app-edituser',
   templateUrl: './edituser.component.html',
@@ -26,7 +25,6 @@ export class EdituserComponent implements OnInit {
       mobilenumber : new FormControl (null, [Validators.required, Validators.pattern(this.phonenumber_pattern)]),
       password : new FormControl (null, Validators.required)
     });
-
     setInterval(() => {
       this.user = this.userService.GetUserById(this.userService.singleUserId);
     }, 500);
