@@ -1,0 +1,32 @@
+<div class="container" [ngStyle]="{marginTop:'50px',color:'darkOrange'}" *ngIf="themeBooking">
+    <h4>Edit Theme</h4>
+</div>
+<div class="container bg-light cont" *ngIf="themeBooking">
+    <form [ngStyle]="{margin:'auto'}" class="row marketing pt-5 pl-5 pr-5 mt-5" (ngSubmit)="EditTheme()" #form="ngForm">
+        <div class="col-lg-6">
+            <input name="themeName" id="themeName" class="form-control" required [ngModel]="themeBooking.themeName" placeholder="Enter theme name" type="text">
+            <input name="themeImageURL" id="themeImageURL" placeholder="Enter the image url" class="form-control" required [ngModel]="themeBooking.themeImageURL" type="text">
+            <input name="themePhotographer" id="photographerDetails" placeholder="Enter photographerDetails" class="form-control" required 
+            [ngModel]="themeBooking.themePhotographer" type="text">
+            <img src="../../../../assets/Theme.png" [ngStyle]="{width:'220px',height:'130px'}">
+        </div>
+
+        <div class="col-lg-6">
+            <input name="themeVideographer" id="videographerDetails" class="form-control" required [ngModel]="themeBooking.themeVideographer" 
+                placeholder="Enter videographerDetails" type="text">
+            <input name="themeReturnGift" id="returnGift" placeholder="Enter theme return gift" class="form-control" required [ngModel]="themeBooking.themeReturnGift" 
+                type="text">
+            <input name="themeAddress" id="themeAddress" placeholder="Enter the place" class="form-control" required [ngModel]="themeBooking.themeAddress" 
+                type="text">
+            <input name="themeCost" id="themeCost" placeholder="Enter theme cost above $100" class="form-control" required [ngModel]="themeBooking.themeCost" type="number" min="100">
+            <textarea class="commentBox form-control z-depth-1" name="themeDescription" id="themeDescription" rows="3"
+                placeholder="Enter theme description" required [ngModel]="themeBooking.themeDescription"></textarea>
+            <div class="mx-2 mb-3" [ngStyle]="{textAlign:'right'}">
+                <div class="btn-group">
+                    <button class="btn btn-danger" type="submit" [disabled]="!form.valid">Edit Theme</button>
+                </div>
+            </div>
+        </div>
+
+    </form>
+</div>

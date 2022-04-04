@@ -1,0 +1,62 @@
+<!--<div class="container" [ngStyle]="{marginTop:'50px',color:'darkOrange'}" *ngIf="themeBooking">
+    <button class="btn btn-danger" (click)="Back()">Back</button>
+    <h4  style="text-align:center" >Theme Details</h4>
+    <button class="btn btn-danger float-right" (click)="continuebooking(themeBooking.themeId)">Continue Booking</button>
+</div>-->
+<div class="container mx-auto align-items-center mt-5">  
+    <div class="row justify-content-between">
+        <div class="col-4">
+        <button type="button" class="btn btn-danger px-4" (click)="BackPage()">
+                <span>Back</span>
+        </button>
+        </div>
+
+        <div class="col-4">
+            <h4  style="text-align: center;" [ngStyle]="{color:'darkOrange'}">Theme Details</h4>
+        </div>
+
+        <div class="col-4">
+        <button type="button" class="btn btn-danger px-4 float-right" (click)="continuebooking(themeBooking.themeId)">
+        <span>Continue</span>
+        </button>
+        </div>
+    </div>
+</div>
+
+<div class="container bg-light cont" *ngIf="themeBooking">
+    <div [ngStyle]="{margin:'auto'}" class="row marketing pt-5 pl-5 pr-5 mt-5">
+        <div class="col-lg-6">
+            <span>
+                <h5 style="display: inline-block;padding-right: 10px;">Theme Name: </h5>
+                <p style="display: inline-block;">{{themeBooking.themeName}}</p>
+            </span><hr>
+            <span>
+                <h5 style="display: inline-block;padding-right: 10px;">photographerDetails: </h5>
+                <p style="display: inline-block;">{{themeBooking.themePhotographer}}</p>
+            </span><br>
+            <br>
+            <img src="../../../../assets/Theme.png" [ngStyle]="{width:'220px',height:'130px'}">
+        </div>
+        <div class="col-lg-6">
+            <span>
+                <h5 style="display: inline-block;padding-right: 10px;">Theme videographerDetails: </h5>
+                <p style="display: inline-block;">{{themeBooking.themeVideographer}}</p>
+            </span><hr>
+            <span>
+                <h5 style="display: inline-block;padding-right: 10px;">Return Gift: </h5>
+                <p style="display: inline-block;">{{themeBooking.themeReturnGift}}</p>
+            </span><hr>
+            <span>
+                <h5 style="display: inline-block;padding-right: 10px;">Theme Cost: </h5>
+                <p style="display: inline-block;">{{themeBooking.themeCost}}</p>
+            </span><hr>
+            <span>
+                <h5 style="display: inline-block;padding-right: 10px;">Theme Description: </h5>
+                <div class="Desc"><p  style="display: inline-block;">{{themeBooking.themeDescription}}</p></div>
+            </span>          
+            <!--<div class="mx-2 mt-2 mb-4" >
+                <button class="btn btn-danger float-right" (click)="continuebooking(themeBooking.themeId)">Continue Booking</button>
+            </div>-->
+        </div>
+    </div>
+</div>

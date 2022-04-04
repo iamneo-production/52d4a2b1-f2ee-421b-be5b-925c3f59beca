@@ -1,0 +1,26 @@
+<div class="container" [ngStyle]="{marginTop:'50px',color:'darkOrange'}">
+    <h4>Edit Menu</h4>
+</div>
+<div class="container bg-light cont" *ngIf="menu">
+    <form [ngStyle]="{margin:'auto'}" class="row marketing pl-5 mt-5" (ngSubmit)="EditMenu()" #form="ngForm">
+        <div class="col-lg-6 pt-5">
+            <input name="foodMenuImageURL" id="foodMenuImageURL" class="form-control" [ngModel]="menu.foodMenuImageURL" required
+                placeholder="Enter Food menu image URL" type="text">
+            <input name="foodMenuItems" id="foodMenuItems" class="form-control" [ngModel]="menu.foodMenuItems" required
+                placeholder="Enter Food menu name" type="text">
+            <select name="foodMenuType" id="foodMenuType" placeholder="Select the food type" class="form-control" required [ngModel]="menu.foodMenuType">
+                <option value="" disabled selected hidden>Select the food type</option>
+                <option>Vegeterian</option>
+                <option>Non-Vegeterian</option>
+            </select>
+            <input name="foodMenuCost" id="foodMenuCost" placeholder="Enter cost for food Menu"
+                class="form-control" required [ngModel]="menu.foodMenuCost" type="text">
+            <div class="btn-group mb-4">
+                <button class="btn btn-danger" type="submit" [disabled]="!form.valid">Update Food Menu</button>
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <img src="../../../../assets/foodMenu.png">
+        </div>
+    </form>
+</div>

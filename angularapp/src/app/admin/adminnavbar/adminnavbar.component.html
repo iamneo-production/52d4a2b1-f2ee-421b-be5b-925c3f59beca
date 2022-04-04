@@ -1,0 +1,49 @@
+<nav class="navbar navbar-expand-lg navbar-light ">
+    <div class="collapse navbar-collapse">
+
+        <h4 role="button" class="nav nav-brand" routerLink="/admin">Birthday Event</h4>
+        <ul class="navbar-nav mr-auto">
+            <li class="pl-3 nav-items light">
+                <a class="nav-link para " [ngStyle]="{color:'white'}" routerLink="getUsers"
+                    routerLinkActive="active" role="button">Users</a>
+                <!-- <div class="dropdown-menu" ngbDropdownMenu>
+                    <button ngbDropdownItem>Add Theme</button>
+                    <button ngbDropdownItem>Delete Theme</button>
+                    <button ngbDropdownItem>Edit Theme</button>
+                    <button ngbDropdownItem>Display Themes</button>
+                </div> -->
+        </li>
+            <li class="pl-3 nav-items light">
+                    <a class="nav-link para " [ngStyle]="{color:'white'}" routerLink="getTheme"
+                        routerLinkActive="active" role="button">Themes</a>
+                    <!-- <div class="dropdown-menu" ngbDropdownMenu>
+                        <button ngbDropdownItem>Add Theme</button>
+                        <button ngbDropdownItem>Delete Theme</button>
+                        <button ngbDropdownItem>Edit Theme</button>
+                        <button ngbDropdownItem>Display Themes</button>
+                    </div> -->
+            </li>
+            <li class="pl-3 nav-items light">
+                <a class="nav-link para" [ngStyle]="{color:'white'}" routerLink="getMenu" routerLinkActive="active"
+                    role="button">Food Menu</a>
+                <!-- <div class="dropdown-menu" ngbDropdownMenu>
+                        <button ngbDropdownItem>Add Menu</button>
+                        <button ngbDropdownItem>Delete Menu</button>
+                        <button ngbDropdownItem>Edit Menu</button>
+                        <button ngbDropdownItem>Display Menu</button>
+                    </div> -->
+            </li>
+            <li class="pl-3 nav-items light">
+                <a class="nav-link para" [ngStyle]="{color:'white'}" routerLink="getAddon"
+                    routerLinkActive="active" role="button">Add-ons</a>
+                <!-- <div class="dropdown-menu" ngbDropdownMenu>
+                    <button ngbDropdownItem>Add add-on</button>
+                    <button ngbDropdownItem>Delete add-on</button>
+                    <button ngbDropdownItem>Edit add-on</button>
+                    <button ngbDropdownItem>Display add-ons</button>
+                </div> -->
+            </li>
+        </ul>
+        <a class="nav-link"type="button"(click)="logout()">Logout</a>
+    </div>
+</nav>
