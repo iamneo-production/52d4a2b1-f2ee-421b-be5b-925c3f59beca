@@ -1,0 +1,19 @@
+.active{
+    color: white;
+    font-weight: 700;
+    font-size: 20px;
+}
+
+.light{
+    color: rgb(226, 12, 12);
+    font-weight: 200;
+    font-size: 20px;
+}
+a{
+    color: white;
+}
+nav{
+    color: white;
+    background-image: linear-gradient(to right, rgb(255, 0, 0), rgba(255, 166, 0, 0.795), rgba(255,0,0,1))
+    /* background-image: radial-gradient(orange,orange,red); */
+}

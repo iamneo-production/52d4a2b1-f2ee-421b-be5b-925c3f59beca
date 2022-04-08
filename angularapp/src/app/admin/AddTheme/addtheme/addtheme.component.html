@@ -1,0 +1,32 @@
+<div class="container" [ngStyle]="{marginTop:'50px',color:'darkOrange'}">
+    <h4>Add Theme</h4>
+</div>
+<div class="container bg-light cont">
+    <form [ngStyle]="{margin:'auto'}" class="row marketing pt-5 pl-5 pr-5 mt-5" (ngSubmit)="onSubmit()" #form="ngForm">
+        <div class="col-lg-6">
+            <input name="themeName" id="themeName" class="form-control" ngModel required placeholder="Enter theme name" type="text">
+            <input name="themeImageUrl" id="imageUrl" placeholder="Enter the image url" class="form-control" required ngModel type="text">
+            <input name="themePhotographer" id="photographerDetails" placeholder="Enter photographerDetails" class="form-control" required
+                ngModel type="text">
+            <img src="../../../../assets/Theme.png" [ngStyle]="{width:'220px',height:'130px'}">
+        </div>
+
+        <div class="col-lg-6">
+            <input name="themeVideographer" id="videographerDetails" class="form-control" required ngModel
+                placeholder="Enter videographerDetails" type="text">
+            <input name="themeReturnGift" id="returnGift" placeholder="Enter theme return gift" class="form-control" required ngModel
+                type="text">
+            <input name="themeAddress" id="themeAddress" placeholder="Enter the Place" class="form-control" required ngModel
+                type="text">
+            <input name="themeCost"  id="themeCost" placeholder="Enter theme cost above $100" class="form-control" required ngModel type="number" min="100">
+            <textarea class="commentBox form-control z-depth-1" name="themeDescription" id="themeDescription" rows="3"
+                placeholder="Enter theme description" required ngModel></textarea>
+            <div class="mx-2 mb-3" [ngStyle]="{textAlign:'right'}">
+                <div class="btn-group">
+                    <button class="btn btn-danger" type="submit" [disabled]="!form.valid">Add Theme</button>
+                </div>
+            </div>
+        </div>
+
+    </form>
+</div>
