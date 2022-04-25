@@ -1,0 +1,68 @@
+<!--SigUp Form-->
+
+<div class="container justify-content-center p-4 mt-3 d-flex" style="background:rgb(63, 124, 216); height: 650px; width: 1050px;border-radius: 25px;">
+    <div class="p-3">
+        <img class="rounded" src="https://media.istockphoto.com/vectors/cheerful-friends-having-fun-at-birthday-party-vector-id1250665481?k=20&m=1250665481&s=612x612&w=0&h=M6kHQcOwa0IG4JL1xCDCQbZ2z0nOBOs2dwwlAvZBaYs=" alt="Image" height="580px" width="600px">
+    </div>
+
+
+
+    <div class="w-50">
+        <h1 style="text-align: center;" class="text-white"> Sign-up</h1>
+        <form [formGroup]="userform" #userRegisterForm="ngForm" (ngSubmit)="register()" autocomplete="off">
+
+            <label for="userrole" class="form-label text-white mt-4">Select Role:  </label>
+            <select [(ngModel)]="model.userrole" name="userrole" [formControl]="userform.controls.userrole" class="form-select bg-transparent text-white" id="userrole">
+            <option  name="user" value="User" style="color:black;" class="selected">User</option>
+            <option name="admin" value="admin" style="color:black;" id="admin">Admin</option>
+          </select>
+            <small *ngIf="userform.get('userrole')?.invalid && userform.get('userrole')?.touched" class="text-warning">Please! Select UserRole</small>
+
+            <div class="form-group mt-2">
+
+                <input id="email" name="email" [(ngModel)]="model.email" formControlName="email" class="form-control bg-transparent text-white " type="email " placeholder="Enter Email " required>
+                <small *ngIf="userform.get('email')?.invalid && userform.get('email')?.touched" class="text-warning"> Invalid Email</small>
+
+            </div>
+
+            <div class="form-group mt-2 ">
+
+
+                <input id="username" name="username" [(ngModel)]="model.username" formControlName="username" class="form-control bg-transparent text-white " type="text " placeholder="Enter User Name " required>
+                <small *ngIf="userform.get('username')?.invalid && userform.get('username')?.touched" class="text-warning">Enter UserName</small>
+
+            </div>
+
+            <div class="form-group mt-2 ">
+
+                <input id="mobileNumber" name="mobilenumber" [(ngModel)]="model.mobilenumber" formControlName="mobilenumber" class="form-control bg-transparent text-white " type="number " placeholder="Enter Mobile Number " required>
+                <small *ngIf="userform.get('mobilenumber')?.invalid && userform.get('mobilenumber')?.touched" class="text-warning">Invalid Number! Enter correct Phone number</small>
+
+            </div>
+
+            <div class="form-group mt-2 ">
+
+                <input id="password" name="password" [(ngModel)]="model.password" formControlName="password" class="form-control bg-transparent text-white " type="password" placeholder="Password " required>
+                <small *ngIf="userform.get('password')?.invalid && userform.get('password')?.touched" class="text-warning">Enter password! Password must include UpperCase ,LowerCase,Special Symbol,Digit and minimum of 8 letters </small>
+
+            </div>
+
+            <div class="form-group mt-2 ">
+
+                <input id="confirmPassword" formControlName="confirmpassword" (change)="onCheckPassword()" class="form-control bg-transparent text-white " type="password" placeholder="Confirm Password " required>
+                <small *ngIf="userform.get('confirmpassword')?.hasError('mismatch')" class="text-warning">Password do not match.</small>
+
+            </div>
+
+            <div class="form-group mt-2 text-center ">
+                <button [disabled]="userform?.invalid" type="submit" class="btn-lg text-white btn-outline-light " style="background: blue; border-radius: 10px; border:1px solid white ">Submit</button>
+            </div>
+
+            <span class="text-white text-center mt-2">Already registered?..</span>
+            <a class="text-white font-weight-bold" routerLink="/auth/login"><span class="h4">Login</span></a>
+        </form> <br>
+
+
+    </div>
+
+</div>

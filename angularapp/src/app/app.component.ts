@@ -7,9 +7,4 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'angularapp';
-  myimage:string="assets/images/cartheme.jpeg";
-  
- 
-
-
 }
